@@ -23,7 +23,7 @@ public class BasicCalculator {
 					firstNumber = sc.nextDouble();
 					break;
 				} catch (InputMismatchException e) {
-					System.err.println("ENTER ONLY NUMERIC VALUES");
+					System.err.println("\n!ENTER ONLY NUMERIC VALUES!\n");
 					sc.next();
 				}
 			}
@@ -44,7 +44,7 @@ public class BasicCalculator {
 					if (operation == '+' || operation == '-' || operation == '*' || operation == '/') {
 						break;
 					} else
-						System.err.println("INVALID OPERATION");
+						System.err.println("\n!INVALID OPERATION!\n");
 				}
 
 				// Reading new number from the user
@@ -54,7 +54,7 @@ public class BasicCalculator {
 						newNumber = sc.nextDouble();
 						break;
 					} catch (InputMismatchException e) {
-						System.err.println("ENTER ONLY NUMERIC VALUES");
+						System.err.println("\n!ENTER ONLY NUMERIC VALUES!\n");
 						sc.next();
 					}
 				}
@@ -73,7 +73,7 @@ public class BasicCalculator {
 							break;
 						}
 						catch(Exception e) {
-							System.out.println("INVALID CHOICE");
+							System.err.println("\n!INVALID CHOICE!\n");
 						}
 					}
 					if (perform == 'Y') {
