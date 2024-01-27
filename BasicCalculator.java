@@ -60,19 +60,29 @@ public class BasicCalculator {
 				}
 				System.out.println("\nRESULT = " + performOperation()+"\n");
 
-				System.out.print("Do you want to perform further operations (Y/N) : ");
+				
 				while (true) {
-					char perform = sc.next().toUpperCase().charAt(0);
-					System.out.println();
+					char perform;
+					while(true) {
+						System.out.print("Do you want to perform further operations (Y/N) : ");
+						try {
+							perform = sc.next().toUpperCase().charAt(0);
+							if(perform != 'Y' && perform !='N') {
+								throw new Exception();
+							}
+							break;
+						}
+						catch(Exception e) {
+							System.out.println("INVALID CHOICE");
+						}
+					}
 					if (perform == 'Y') {
 						firstNumber = performOperation();
-						System.out.println("-----------------------------------------------");
+						System.out.println("\n-----------------------------------------------");
 						break;
 					} else if (perform == 'N') {
 						System.out.println("Thank you. Have a Nice day!");
 						return;
-					} else {
-						System.err.println("INVALID CHOICE");
 					}
 				}
 			}
